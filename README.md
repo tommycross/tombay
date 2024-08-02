@@ -3,7 +3,11 @@
 
 ## Overview
 
-This project is a .NET Core 8 WebAPI application designed to provide RESTful services for the TomBay example application. The API supports basic CRUD operations and includes SwaggerUI for easy testing and documentation.
+This project is a .NET Core 8 WebAPI application designed to provide RESTful services for the TomBay example application.
+
+The idea is that it's a simple catalogue of some of the things in my old apartment that I'm trying to sell or give away. 
+
+The API supports basic CRUD operations and includes SwaggerUI for easy testing and documentation.
 
 ## Project Structure
 
