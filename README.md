@@ -7,7 +7,7 @@ This project is a .NET Core 8 WebAPI application designed to provide RESTful ser
 
 ## Project Structure
 
-The project follows a typical .NET Core WebAPI structure with controllers, services, models, and data access layers. Below is an overview of the key directories and files:
+The project follows part of a typical .NET Core WebAPI structure with controllers, services, models, and a mock data store. Below is an overview of the key directories and files:
 
 ```
 - TomBayAPI
