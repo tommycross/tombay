@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.002.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TomBay", "TomBayAPI\TomBay.csproj", "{E97E5657-E45B-4473-B27B-2AA7E7849378}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TomBayTests", "TomBayTests\TomBayTests.csproj", "{3530A10A-502A-44D2-8DDE-50F384106EA9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E97E5657-E45B-4473-B27B-2AA7E7849378}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E97E5657-E45B-4473-B27B-2AA7E7849378}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E97E5657-E45B-4473-B27B-2AA7E7849378}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E97E5657-E45B-4473-B27B-2AA7E7849378}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3530A10A-502A-44D2-8DDE-50F384106EA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3530A10A-502A-44D2-8DDE-50F384106EA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3530A10A-502A-44D2-8DDE-50F384106EA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3530A10A-502A-44D2-8DDE-50F384106EA9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {734AD3BD-E369-49A2-A371-AA94DC0B4205}
+	EndGlobalSection
+EndGlobal
