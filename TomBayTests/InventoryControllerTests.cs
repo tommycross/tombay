@@ -22,8 +22,8 @@ public class InventoryControllerTests
         // Arrange
         var items = new List<InventoryItem>
         {
-            new InventoryItem { Id = 1, Name = "Item1" },
-            new InventoryItem { Id = 2, Name = "Item2" }
+            new InventoryItem { Id = 1, Name = "Item1", Description = "Description1", Price = 123.45M, ImagePath = "foo/bar/qux1.jpg"},
+            new InventoryItem { Id = 2, Name = "Item2", Description = "Description2", Price = 678.90M, ImagePath = "foo/bar/qux2.jpg" }
         };
         _mockInventoryService.Setup(service => service.GetAllItemsAsync()).ReturnsAsync(items);
 
@@ -40,7 +40,14 @@ public class InventoryControllerTests
     public async Task GetItem_ReturnsOkResult_WithItem()
     {
         // Arrange
-        var item = new InventoryItem { Id = 1, Name = "Item1" };
+        var item = new InventoryItem
+        {
+            Id = 1,
+            Name = "Item1",
+            Description = "Description1",
+            Price = 123.45M,
+            ImagePath = "foo/bar/qux.jpg"
+        };
         _mockInventoryService.Setup(service => service.GetItemByIdAsync(1)).ReturnsAsync(item);
 
         // Act
@@ -50,6 +57,10 @@ public class InventoryControllerTests
         var okResult = Assert.IsType<OkObjectResult>(result);
         var returnItem = Assert.IsType<InventoryItem>(okResult.Value);
         Assert.Equal(1, returnItem.Id);
+        Assert.Equal("Item1", returnItem.Name);
+        Assert.Equal("Description1", returnItem.Description);
+        Assert.Equal(123.45M, returnItem.Price);
+        Assert.Equal("foo/bar/qux.jpg", returnItem.ImagePath);
     }
 
     [Fact]
@@ -69,7 +80,14 @@ public class InventoryControllerTests
     public async Task CreateItem_ReturnsCreatedAtAction()
     {
         // Arrange
-        var item = new InventoryItem { Id = 1, Name = "Item1" };
+        var item = new InventoryItem
+        {
+            Id = 1,
+            Name = "Item1",
+            Description = "Description1",
+            Price = 123.45M,
+            ImagePath = "foo/bar/qux.jpg"
+        };
 
         // Act
         var result = await _controller.CreateItem(item);
@@ -98,7 +116,14 @@ public class InventoryControllerTests
     public async Task UpdateItem_ReturnsNoContent()
     {
         // Arrange
-        var item = new InventoryItem { Id = 1, Name = "Item1" };
+        var item = new InventoryItem
+        {
+            Id = 1,
+            Name = "Item1",
+            Description = "Description1",
+            Price = 123.45M,
+            ImagePath = "foo/bar/qux.jpg"
+        };
 
         // Act
         var result = await _controller.UpdateItem(1, item);
@@ -111,7 +136,14 @@ public class InventoryControllerTests
     public async Task UpdateItem_ReturnsBadRequest_WhenIdMismatch()
     {
         // Arrange
-        var item = new InventoryItem { Id = 1, Name = "Item1" };
+        var item = new InventoryItem
+        {
+            Id = 1,
+            Name = "Item1",
+            Description = "Description1",
+            Price = 123.45M,
+            ImagePath = "foo/bar/qux.jpg"
+        };
 
         // Act
         var result = await _controller.UpdateItem(2, item);
@@ -129,5 +161,4 @@ public class InventoryControllerTests
         // Assert
         Assert.IsType<NoContentResult>(result);
     }
-
 }
